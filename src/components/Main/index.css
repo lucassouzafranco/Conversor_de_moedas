@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Roboto+Mono:wght@200&display=swap');
+
+.area {
+  display: block;
+  flex-direction: column;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.imgContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  z-index: -1;
+  height: 97vh;
+  overflow: hidden;
+}
+
+.imgDesign {
+  display: block;
+  width: 100vw;
+  filter: blur(2px);
+}
+
+.titleInputArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  margin-right: 35vw;
+  margin-left: 35vw;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 7px;
+  margin-top: 12vh;
+  padding-bottom: 2vw;
+}
+
+.field {
+  display: block;
+  margin: 0 auto;
+  width: 19vw;
+  height: 8vh;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(255,255,255,0.3);
+  transition: 0.3s all;
+  text-align: center;
+}
+
+.field:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0px 4px 20px 0px rgba(0.3, 0.3, 0.3, 0.3);
+}
+
+.designCascade {
+  display: block;
+  margin: 0 auto;
+  width: 19vw;
+  height: 8vh;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(255,255,255,0.3);
+  transition: 0.3s all;
+  text-align: center;
+}
+
+.designCascade:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0px 4px 20px 0px rgba(0.3, 0.3, 0.3, 0.3);
+}
+
+.submitDesign {
+  width: 10vw;
+  height: 6vh;
+}
+
+.submitDesign.field:hover{
+  background-color: rgba(255, 255, 255, 0.45); /*não funciona*/
+  box-shadow: 0px 4px 20px 0px rgba(0.3, 0.3, 0.3, 0.3);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+  background-color: rgb(224, 231, 235);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.containerSocial {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  padding-top: 1.5vh;
+}
+
+.containerIcons {
+  display: flex;
+  justify-content: space-between;
+  width: 15vw;
+}
+
+.icons {
+  font-size:2vw;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #003250;
+}
