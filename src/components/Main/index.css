@@ -87,13 +87,22 @@
 footer {
   display: flex;
   flex-direction: column;
-  padding-top: 2vh;
-  padding-bottom: 1vh;
   background-color: rgb(224, 231, 235);
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100vw;
+}
+
+.containerText {
+  display: flex;
+  justify-content: center;
+  font-size: small;
+}
+
+.apiLink {
+  padding-left: 0.5em;
+  event
 }
 
 .containerSocial {
@@ -102,6 +111,7 @@ footer {
   justify-content: center;
   padding-top: 1.5vh;
 }
+
 
 .containerIcons {
   display: flex;
