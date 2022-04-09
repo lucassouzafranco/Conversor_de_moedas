@@ -20,8 +20,6 @@ const Main = () => {
         //console.log(docs);
       
     } catch(err) {
-        // TODO
-        // adicionar tratamento da exceção
         console.error(err);
     }
   };
@@ -44,12 +42,14 @@ const Main = () => {
         case 'euro':
           let euroFloat = parseFloat(coins.EUR.high);
           let realtoEuro = (realFloat / euroFloat);
-          window.alert(`${euroFloat} reais equivalem à ${realtoEuro.toFixed(2)} euros.`);
+          window.alert(`${realFloat} reais equivalem à ${realtoEuro.toFixed(2)} euros.`);
+          break;
 
         case 'libra':
           let libraFloat = parseFloat(coins.GBP.high);
           let realtoLibra = (realFloat / libraFloat);
-          window.alert(`${libraFloat} reais equivalem à ${realtoLibra.toFixed(2)} libras.`);
+          window.alert(`${realFloat} reais equivalem à ${realtoLibra.toFixed(2)} libras.`);
+          break;
 
         default:
           break;
@@ -57,15 +57,16 @@ const Main = () => {
     }
   }
   
+  // impede o recarregamento da página ao clicar no botão "converter"
   const envio = (event) => {
     event.preventDefault();
   } 
 
   return(
     <>
-      {coins&&(
+      {coins&&( //renderização condicional => "se coins existir"
         <div className='area'>
-          <div className='imgContainer'><img src={graphics} className='imgDesign'/></div> 
+          <div className='imgContainer'><img src={graphics} alt='background' className='imgDesign'/></div> 
             <div className='titleInputArea'>
                 <h1>Exchange</h1>
                 <input type='number' placeholder='Ex.: R$1 (BRL):' className='field' onChange={(e) => setBRL(e.target.value)}></input>
@@ -82,8 +83,7 @@ const Main = () => {
             <div className='footerBackground'>
               <footer>
                 <div className='containerText'>
-                  <p>This page was built using ReactJS⚛️ and an API called</p>
-                  <p className='apiLink'><a href='https://docs.awesomeapi.com.br/'>Awesome API</a></p>
+                  <p>This page was built using ReactJS⚛️ and an API called <a href='https://docs.awesomeapi.com.br/'>Awesome API</a></p>
                 </div>
                 <div className='containerSocial'>
                   <div className='containerIcons'>
