@@ -1,6 +1,10 @@
 {
   "name": "exchange",
   "version": "0.1.0",
+  "engines": {
+    "node": "16.6.2",
+    "npm": "7.20.3"
+  },
   "private": true,
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
