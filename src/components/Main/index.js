@@ -68,7 +68,7 @@ const Main = () => {
         <div className='area'>
           <div className='imgContainer'><img src={graphics} alt='background' className='imgDesign'/></div> 
             <div className='titleInputArea'>
-                <h1>Exchange</h1>
+                <h1>Exchange3</h1>
                 <input type='number' placeholder='Ex.: R$1 (BRL):' className='field' onChange={(e) => setBRL(e.target.value)}></input>
                   <br></br><h3>Selecione a moeda 🪙</h3>
                   <form action="/action_page.php" onSubmit={envio}>
