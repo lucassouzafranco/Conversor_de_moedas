@@ -17,7 +17,7 @@ const Main = () => {
     try {
         const response = await axios.get('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,GBP-BRL');
         setCoins(response.data);
-        //console.log(docs);
+        console.log(coins);
       
     } catch(err) {
         console.error(err);
@@ -34,19 +34,19 @@ const Main = () => {
       switch (choice) {
 
         case 'dolar':
-          let dolarFloat = parseFloat(coins.USD.high);
+          let dolarFloat = parseFloat(coins.USDBRL.high);
           let realToDolar = (realFloat / dolarFloat);
           window.alert(`${realFloat} reais equilavem à ${realToDolar.toFixed(2)} dólares.`);
           break;
       
         case 'euro':
-          let euroFloat = parseFloat(coins.EUR.high);
+          let euroFloat = parseFloat(coins.EURBRL.high);
           let realtoEuro = (realFloat / euroFloat);
           window.alert(`${realFloat} reais equivalem à ${realtoEuro.toFixed(2)} euros.`);
           break;
 
         case 'libra':
-          let libraFloat = parseFloat(coins.GBP.high);
+          let libraFloat = parseFloat(coins.GBPBRL.high);
           let realtoLibra = (realFloat / libraFloat);
           window.alert(`${realFloat} reais equivalem à ${realtoLibra.toFixed(2)} libras.`);
           break;
@@ -73,9 +73,9 @@ const Main = () => {
                   <br></br><h3>Selecione a moeda 🪙</h3>
                   <form action="/action_page.php" onSubmit={envio}>
                     <select name="currency" id="currency" className='designCascade' onChange={(e) => setChoice(e.target.value)}>
-                      <option value="dolar">Dólar (USD) {coins.USD.high}</option>
-                      <option value="euro">Euro (EUR) {coins.EUR.high}</option>
-                      <option value="libra">Libra (GBP) {coins.GBP.high}</option>
+                      <option value="dolar">Dólar (USD) {coins.USDBRL.high}</option>
+                      <option value="euro">Euro (EUR) {coins.EURBRL.high}</option>
+                      <option value="libra">Libra (GBP) {coins.GBPBRL.high}</option>
                     </select><br></br><br></br>
                     <input type="submit" value="Converter" className='submitDesign' onClick={() => conversion()}></input>
                   </form>
