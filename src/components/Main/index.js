@@ -1,5 +1,5 @@
 import './index.css';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import axios from 'axios';
 import React, { useEffect } from "react";
 import {Icon} from "@iconify/react";
@@ -13,20 +13,20 @@ const Main = () => {
   const [brl, setBRL] = useState(null);
   const [choice, setChoice] = useState('dolar');
 
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     try {
-        const response = await axios.get('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,GBP-BRL');
-        setCoins(response.data);
-        console.log(coins);
-      
-    } catch(err) {
-        console.error(err);
+      const response = await axios.get('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,GBP-BRL');
+      setCoins(response.data);
+    } catch (error) {
+      console.log(error);
     }
-  };
+  }, []);  
 
   useEffect(() => {
     loadData();
-  }, [])
+  }, []);
+
+  console.log(coins);
 
   const conversion = () => {
     if (coins) {
@@ -71,7 +71,7 @@ const Main = () => {
                 <h1>Exchange3</h1>
                 <input type='number' placeholder='Ex.: R$1 (BRL):' className='field' onChange={(e) => setBRL(e.target.value)}></input>
                   <br></br><h3>Selecione a moeda 🪙</h3>
-                  <form action="/action_page.php" onSubmit={envio}>
+                  <form onSubmit={envio}>
                     <select name="currency" id="currency" className='designCascade' onChange={(e) => setChoice(e.target.value)}>
                       <option value="dolar">Dólar (USD) {coins.USDBRL.high}</option>
                       <option value="euro">Euro (EUR) {coins.EURBRL.high}</option>
